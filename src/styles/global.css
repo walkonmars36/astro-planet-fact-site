@@ -1,0 +1,44 @@
+body {
+  background: black url("src/assets/background-stars.svg") no-repeat center
+    center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  text-transform: uppercase;
+}
+
+.content-area {
+  display: flex;
+}
