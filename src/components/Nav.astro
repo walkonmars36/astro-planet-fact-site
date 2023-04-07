@@ -2,7 +2,11 @@
 ---
 
 <nav>
-  <ul>
+  <div class="nav-container">
+    <a class="home" href="/">The Planets</a>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+  <ul class="nav__links">
     <li><a href="/mercury">Mercury</a></li>
     <li><a href="/venus">Venus</a></li>
     <li><a href="/">Earth</a></li>
@@ -17,17 +21,77 @@
 <style>
   nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
   }
 
-  ul {
+  .nav-container {
     display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
   }
 
   li {
-    margin-left: 1em;
+    padding: 0 0.5em;
   }
-
   a {
     text-transform: uppercase;
   }
+
+  .nav__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 3em;
+    background-color: black;
+    transform: translateY(-100%);
+    transition: transform ease-out 250ms;
+    z-index: 0;
+  }
+
+  .hamburger {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .open {
+    transform: translateY(0);
+  }
+
+  .no-scroll {
+    overflow-y: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .nav__links {
+      position: initial;
+      display: flex;
+      flex-direction: row;
+      flex: 0;
+      padding-top: 0;
+      transform: translateY(0);
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav__links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    document.body.classList.toggle("no-scroll");
+  });
+</script>

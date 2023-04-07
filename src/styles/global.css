@@ -17,13 +17,6 @@ ul {
   list-style: none;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
 a {
   color: #fff;
   text-decoration: none;
@@ -34,9 +27,26 @@ img {
   display: block;
 }
 
+header {
+  border: 1px solid white;
+  padding: 1em;
+}
+
 footer {
   display: flex;
   flex-direction: column;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentcolor;
+  }
 }
 
 .btn {
