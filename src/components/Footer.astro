@@ -1,5 +1,6 @@
 ---
-const { rotation, revolution, radius, temperature } = Astro.props;
+import type { DataProps } from "../interface";
+const { rotation, revolution, radius, temperature } = Astro.props as DataProps;
 import FooterCard from "./FooterCard.astro";
 ---
 

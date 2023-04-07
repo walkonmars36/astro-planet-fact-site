@@ -2,7 +2,7 @@
 import contentData from "../data/contentData.json";
 import "../styles/global.css";
 
-import Nav from "../components/Nav.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import ContentLayout from "../layouts/ContentLayout.astro";
@@ -17,17 +17,7 @@ const { index }: Props = Astro.props;
 
 const planetData: DataProps = contentData[index];
 
-const {
-  name,
-  overview,
-  structure,
-  geology,
-  rotation,
-  revolution,
-  radius,
-  temperature,
-  images,
-} = planetData;
+const { name } = planetData;
 ---
 
 <!DOCTYPE html>
@@ -40,18 +30,8 @@ const {
     <title>Planet Facts | {name}</title>
   </head>
   <body>
-    <header>
-      <h3>THE PLANETS</h3>
-      <Nav />
-    </header>
-
+    <Header />
     <ContentLayout {...planetData} />
-
-    <Footer
-      rotation={rotation}
-      revolution={revolution}
-      radius={radius}
-      temperature={temperature}
-    />
+    <Footer {...planetData} />
   </body>
 </html>
