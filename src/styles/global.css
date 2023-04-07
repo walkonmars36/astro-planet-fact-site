@@ -27,12 +27,16 @@ header {
 a {
   color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {

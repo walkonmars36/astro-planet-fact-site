@@ -3,6 +3,7 @@ import contentData from "../data/contentData.json";
 import "../styles/global.css";
 
 import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 
 interface DataProps {
   name: string;
@@ -65,19 +66,29 @@ const {
       <Nav />
     </header>
     <main>
-      <section class="content-area">
-        <picture>
+      <section class="page">
+        <picture class="page__img">
           <img src={images.planet} alt={name} />
         </picture>
-        <div>
+
+        <article class="page__content">
           <h1>{name}</h1>
           <p>{overview.content}</p>
           <small>Source : <a href={overview.source}>Wikipedia</a></small>
+        </article>
+        <div class="page__content-btns">
           <button class="btn btn__state-change">Overview</button>
           <button class="btn btn__state-change">Internal Structure</button>
           <button class="btn btn__state-change">Surface Geology</button>
         </div>
       </section>
     </main>
+
+    <Footer
+      rotation={rotation}
+      revolution={revolution}
+      radius={radius}
+      temperature={temperature}
+    />
   </body>
 </html>

@@ -1,0 +1,15 @@
+---
+const { label, value } = Astro.props;
+---
+
+<div class="footer__card">
+  <h3>{label}</h3>
+  <p>{value}</p>
+</div>
+
+<style>
+  .footer__card {
+    padding: 2em;
+    border: 1px solid white;
+  }
+</style>
