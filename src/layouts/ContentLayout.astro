@@ -7,7 +7,7 @@ const { name, overview, images } = Astro.props as DataProps;
 <main>
   <section class="page">
     <picture class="page__img">
-      <img src={images.planet} alt={name} />
+      <img src={images.planet} alt={`The planet of ${name}`} />
     </picture>
 
     <article class="page__content">

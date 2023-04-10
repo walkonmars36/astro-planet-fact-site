@@ -19,19 +19,11 @@
 </nav>
 
 <style>
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 3;
-  }
-
   .nav-container {
     display: flex;
     flex: 1;
     justify-content: space-between;
     align-items: center;
-    z-index: 4;
   }
 
   li {
@@ -46,15 +38,13 @@
     flex-direction: column;
     justify-content: space-evenly;
     position: fixed;
-    top: 0;
+    top: 3rem;
     right: 0;
     bottom: 0;
     left: 0;
-    padding-top: 3em;
     background-color: black;
-    transform: translateY(-100%);
+    transform: translateX(-100%);
     transition: transform ease-out 250ms;
-    z-index: 2;
   }
 
   .hamburger {
@@ -63,7 +53,7 @@
   }
 
   .open {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   .no-scroll {
@@ -85,13 +75,3 @@
     }
   }
 </style>
-
-<script>
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav__links");
-
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-    document.body.classList.toggle("no-scroll");
-  });
-</script>

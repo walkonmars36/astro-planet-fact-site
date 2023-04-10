@@ -1,6 +1,5 @@
 body {
-  background: black url("src/assets/background-stars.svg") no-repeat center
-    center;
+  background: black url("/assets/background-stars.svg") no-repeat center center;
   min-height: 100vh;
   color: #fff;
 }
@@ -28,9 +27,26 @@ img {
 }
 
 header {
-  border: 1px solid white;
   padding: 1em;
-  z-index: 1;
+  position: relative;
+  z-index: 2;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #fff;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 footer {
