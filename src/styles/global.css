@@ -30,6 +30,7 @@ img {
 header {
   border: 1px solid white;
   padding: 1em;
+  z-index: 1;
 }
 
 footer {
