@@ -49,5 +49,6 @@ button {
 }
 
 .no-scroll {
-  overflow-y: hidden;
+  overflow: hidden;
+  width: 100%;
 }

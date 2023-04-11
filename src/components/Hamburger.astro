@@ -2,9 +2,6 @@
 ---
 
 <div class="hamburger">
-  <!-- <span class="line"></span>
-  <span class="line"></span>
-  <span class="line"></span> -->
   <button class="hamburger" aria-label="Open navigation">&#9776;</button>
 </div>
 
@@ -15,11 +12,9 @@
     color: white;
   }
 
-  /* .hamburger .line {
-    display: block;
-    width: 1.5rem;
-    height: 0.2rem;
-    margin: 0.3rem 0;
-    background-color: white;
-  } */
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+  }
 </style>

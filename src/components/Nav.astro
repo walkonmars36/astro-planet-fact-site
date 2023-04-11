@@ -30,25 +30,25 @@
   </ul>
 </nav>
 
-<style>
+<style is:global>
   ul {
     list-style: none;
   }
 
   .nav {
     position: fixed;
-    background: black;
-    top: 4rem;
+    background: #000;
     width: 100%;
+    top: 4rem;
     right: 0;
     bottom: 0;
     left: -100%;
-    transition: transform 500ms ease;
+    transform: translateX(0);
+    transition: transform 250ms;
   }
 
   .nav__list {
     display: flex;
-
     height: 100%;
     flex-direction: column;
     align-items: center;
@@ -57,5 +57,16 @@
 
   .nav__open {
     transform: translateX(100%);
+  }
+
+  @media (min-width: 768px) {
+    .nav {
+      position: initial;
+      background: inherit;
+    }
+
+    .nav__list {
+      flex-direction: row;
+    }
   }
 </style>
