@@ -12,41 +12,15 @@ body {
   padding: 0;
 }
 
-ul {
-  list-style: none;
-}
-
 a {
   color: #fff;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 img {
   max-width: 100%;
   display: block;
-}
-
-header {
-  padding: 1em;
-  position: relative;
-  z-index: 2;
-}
-
-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background-color: #fff;
-  z-index: 10;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 footer {
@@ -72,4 +46,8 @@ button {
 
 .content-area {
   display: flex;
+}
+
+.no-scroll {
+  overflow-y: hidden;
 }

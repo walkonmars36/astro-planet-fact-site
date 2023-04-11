@@ -1,7 +1,8 @@
 const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav__links");
+const navList = document.querySelector(".nav__list");
+const nav = document.querySelector(".nav");
 
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+  nav.classList.toggle("nav__open");
   document.body.classList.toggle("no-scroll");
 });

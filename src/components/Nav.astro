@@ -1,77 +1,61 @@
 ---
 ---
 
-<nav>
-  <div class="nav-container">
-    <a class="home" href="/">The Planets</a>
-    <button class="hamburger"><i class="fas fa-bars"></i></button>
-  </div>
-  <ul class="nav__links">
-    <li><a href="/mercury">Mercury</a></li>
-    <li><a href="/venus">Venus</a></li>
-    <li><a href="/">Earth</a></li>
-    <li><a href="/mars">Mars</a></li>
-    <li><a href="/jupiter">Jupiter</a></li>
-    <li><a href="/saturn">Saturn</a></li>
-    <li><a href="/uranus">Uranus</a></li>
-    <li><a href="/neptune">Neptune</a></li>
+<nav class="nav">
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a href="/mercury" class="nav__link">Mercury</a>
+    </li>
+    <li class="nav__item">
+      <a href="/venus" class="nav__link">Venus</a>
+    </li>
+    <li class="nav__item">
+      <a href="/" class="nav__link">Earth</a>
+    </li>
+    <li class="nav__item">
+      <a href="/mars" class="nav__link">Mars</a>
+    </li>
+    <li class="nav__item">
+      <a href="/jupiter" class="nav__link">Jupiter</a>
+    </li>
+    <li class="nav__item">
+      <a href="/saturn" class="nav__link">Saturn</a>
+    </li>
+    <li class="nav__item">
+      <a href="/uranus" class="nav__link">Uranus</a>
+    </li>
+    <li class="nav__item">
+      <a href="/neptune" class="nav__link">Neptune</a>
+    </li>
   </ul>
 </nav>
 
 <style>
-  .nav-container {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
+  ul {
+    list-style: none;
   }
 
-  li {
-    padding: 0 0.5em;
-  }
-  a {
-    text-transform: uppercase;
-  }
-
-  .nav__links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  .nav {
     position: fixed;
-    top: 3rem;
+    background: black;
+    top: 4rem;
+    width: 100%;
     right: 0;
     bottom: 0;
-    left: 0;
-    background-color: black;
-    transform: translateX(-100%);
-    transition: transform ease-out 250ms;
+    left: -100%;
+    transition: transform 500ms ease;
   }
 
-  .hamburger {
-    color: white;
-    font-size: 1.5rem;
+  .nav__list {
+    display: flex;
+
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
 
-  .open {
-    transform: translateX(0);
-  }
-
-  .no-scroll {
-    overflow-y: hidden;
-  }
-
-  @media (min-width: 768px) {
-    .nav__links {
-      position: initial;
-      display: flex;
-      flex-direction: row;
-      flex: 0;
-      padding-top: 0;
-      transform: translateY(0);
-    }
-
-    .hamburger {
-      display: none;
-    }
+  .nav__open {
+    transform: translateX(100%);
   }
 </style>

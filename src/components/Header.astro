@@ -1,7 +1,34 @@
 ---
 import Nav from "../components/Nav.astro";
+import Hamburger from "../components/Hamburger.astro";
 ---
 
 <header>
+  <a class="home" href="/">The Planets</a>
   <Nav />
+  <Hamburger />
 </header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #333;
+    position: relative;
+    z-index: 10;
+    height: 4rem;
+    padding: 0 1rem;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #fff;
+    z-index: 20;
+  }
+</style>
