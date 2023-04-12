@@ -7,6 +7,13 @@ import FooterCard from "./FooterCard.astro";
 <footer>
   <FooterCard label="Rotation Time" value={rotation} />
   <FooterCard label="Revolution Time" value={revolution} />
-  <FooterCard label="Radius:" value={radius} />
+  <FooterCard label="Radius" value={radius} />
   <FooterCard label="Average Temp." value={temperature} />
 </footer>
+
+<style>
+  footer {
+    display: flex;
+    padding: var(--spacing-3);
+  }
+</style>

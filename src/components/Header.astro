@@ -14,11 +14,10 @@ import Hamburger from "../components/Hamburger.astro";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #333;
     position: relative;
     z-index: 10;
     height: 4rem;
-    padding: 0 1rem;
+    padding: 0 var(--spacing-3);
   }
 
   header::after {
@@ -30,5 +29,10 @@ import Hamburger from "../components/Hamburger.astro";
     height: 1px;
     background-color: #fff;
     z-index: 20;
+  }
+
+  .home {
+    font-family: "Antonio", sans-serif;
+    font-size: 1.75rem;
   }
 </style>

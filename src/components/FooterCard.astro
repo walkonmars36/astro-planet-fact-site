@@ -3,13 +3,25 @@ const { label, value } = Astro.props;
 ---
 
 <div class="footer__card">
-  <h3>{label}</h3>
-  <p>{value}</p>
+  <div class="footer__card-items">
+    <h3>{label}</h3>
+    <span>{value}</span>
+  </div>
 </div>
 
 <style>
-  .footer__card {
-    padding: 2em;
+  .footer__card-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-2) var(--spacing-3);
     border: 1px solid white;
+    margin-top: var(--spacing-2);
+  }
+
+  span {
+    font-family: "Antonio", sans-serif;
+    font-weight: 400;
+    font-size: 1.25em;
   }
 </style>

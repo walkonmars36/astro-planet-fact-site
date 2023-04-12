@@ -4,29 +4,106 @@ import type { DataProps } from "../interface";
 const { name, overview, images } = Astro.props as DataProps;
 ---
 
-<main>
-  <section class="page">
-    <picture class="page__img">
-      <img src={images.planet} alt={`The planet of ${name}`} />
-    </picture>
-
-    <article class="page__content">
-      <h1>{name}</h1>
-      <p>{overview.content}</p>
-      <small>Source : <a href={overview.source}>Wikipedia</a></small>
-    </article>
-    <div class="page__content-btns">
-      <button class="btn btn__state-change">Overview</button>
-      <button class="btn btn__state-change">Internal Structure</button>
-      <button class="btn btn__state-change">Surface Geology</button>
-    </div>
+<main class="page">
+  <section class="page__buttons-mob">
+    <button class="page__buttons-mob-item">Overview</button>
+    <button class="page__buttons-mob-item">Structure</button>
+    <button class="page__buttons-mob-item">Surface</button>
   </section>
+  <div class="planet__img-container">
+    <img
+      class=`planet__img planet__img--${name}`
+      src={images.planet}
+      alt={`The planet ${name}`}
+    />
+  </div>
+  <article class="page__content">
+    <h1 class="page__title">{name}</h1>
+    <p class="page__text">{overview.content}</p>
+    <small class="wiki-link"
+      >Source : <a href={overview.source}>Wikipedia</a></small
+    >
+  </article>
 </main>
 
 <style>
-  .btn__state-change {
-    color: white;
-    padding: 0.5rem 1rem;
-    border: 1px solid white;
+  .page__text {
+    text-align: center;
+  }
+
+  .page__buttons-mob {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--spacing-3);
+    border-bottom: 1px solid white;
+  }
+
+  .page__buttons-mob-item {
+    padding: var(--spacing-2) var(--spacing-0);
+    border-bottom: 4px solid white;
+    letter-spacing: 0.1rem;
+  }
+  .page__content {
+    padding: 0 var(--spacing-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .page__content p {
+    max-width: 40ch;
+    margin-top: var(--spacing-2);
+  }
+
+  .wiki-link {
+    margin-top: var(--spacing-4);
+  }
+
+  /* Planet Images */
+
+  .planet__img-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* img width modifiers */
+  .planet__img--Mercury {
+    width: 29.6vw;
+    margin: var(--spacing-9) 0;
+  }
+
+  .planet__img--Venus {
+    width: 41vw;
+    margin: var(--spacing-9) 0;
+  }
+
+  .planet__img--Earth {
+    width: 46vw;
+    margin: var(--spacing-8) 0;
+  }
+
+  .planet__img--Mars {
+    width: 34.4vw;
+    margin: var(--spacing-11) 0;
+  }
+
+  .planet__img--Jupiter {
+    width: 59.75vw;
+    margin: var(--spacing-5) 0;
+  }
+
+  .planet__img--Saturn {
+    width: 60vw;
+    margin: var(--spacing-4) 0;
+  }
+
+  .planet__img--Uranus {
+    width: 47vw;
+    margin: var(--spacing-8) 0;
+  }
+
+  .planet__img--Neptune {
+    width: 46vw;
+    margin: var(--spacing-8) 0;
   }
 </style>
