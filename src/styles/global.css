@@ -12,6 +12,17 @@
   --spacing-10: 5rem;
   --spacing-11: 5.5rem;
   --spacing-12: 6rem;
+
+  /* COLOURS */
+
+  --mercury-color: hsl(194, 48%, 49%);
+  --venus-color: hsl(33, 82%, 61%);
+  --earth-color: hsl(263, 57%, 51%);
+  --mars-color: hsl(10, 63%, 51%);
+  --jupiter-color: hsl(2, 68%, 53%);
+  --saturn-color: hsl(17, 73%, 46%);
+  --uranus-color: hsl(169, 73%, 44%);
+  --neptune-color: hsl(222, 87%, 56%);
 }
 
 *,
@@ -93,4 +104,25 @@ button {
 .no-scroll {
   overflow: hidden;
   width: 100%;
+}
+
+/* PAGE BUTTONS */
+
+/* MOBILE */
+
+.page__buttons-mob {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--spacing-3);
+  border-bottom: 1px solid white;
+}
+
+.page__buttons-mob--item {
+  padding: var(--spacing-2) var(--spacing-0);
+  letter-spacing: 0.2rem;
+}
+
+.page__buttons-mob--item.active {
+  border-bottom: 4px solid white;
 }
