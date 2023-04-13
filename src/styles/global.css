@@ -73,6 +73,10 @@ a {
   text-transform: uppercase;
 }
 
+ul {
+  list-style: none;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -148,6 +152,17 @@ button {
 
 .wiki-link {
   margin-top: var(--spacing-4);
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.wiki-link a {
+  text-transform: initial;
+  text-decoration: underline;
+}
+
+.wiki-link::after {
+  content: url("/assets/icon-source.svg");
 }
 
 /* Planet Images */

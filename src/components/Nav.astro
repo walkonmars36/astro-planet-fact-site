@@ -30,15 +30,12 @@
   </ul>
 </nav>
 
-<style is:global>
-  ul {
-    list-style: none;
-  }
-
+<style>
   .nav {
     position: fixed;
     background: #070724;
     width: 100%;
+
     top: 4rem;
     right: 0;
     bottom: 0;
@@ -46,17 +43,44 @@
     transform: translateX(0);
     transition: transform 250ms;
   }
+  .nav__open {
+    transform: translateX(100%);
+  }
 
   .nav__list {
     display: flex;
     height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    padding: var(--spacing-2) var(--spacing-3);
   }
 
-  .nav__open {
-    transform: translateX(100%);
+  .nav__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-2) 0;
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
+
+  .nav__item::before {
+    content: "";
+    display: block;
+    width: 1.25rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: var(--spacing-2);
+  }
+
+  .nav__item::after {
+    content: url("./assets/icon-chevron.svg");
+    display: block;
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    margin-top: 0.5rem;
+    margin-left: auto;
   }
 
   @media (min-width: 768px) {

@@ -13,16 +13,11 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
   }
 
   function currentContent() {
-    switch (tab) {
-      case "overview":
-        return overview;
-      case "structure":
-        return structure;
-      case "surface":
-        return geology;
-      default:
-        return overview;
-    }
+    return tab === "overview"
+      ? overview
+      : tab === "structure"
+      ? structure
+      : geology;
   }
 
   return (
