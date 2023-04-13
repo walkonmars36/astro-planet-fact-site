@@ -1,12 +1,4 @@
-import { useState } from "preact/hooks";
-
-const MobileBtns = ({ activeTab, name }) => {
-  const [tab, setTab] = useState(activeTab);
-
-  function changeActiveTab(tab) {
-    setTab(tab);
-  }
-
+const MobileBtns = ({ name, tab, changeActiveTab }) => {
   const activeStyle = {
     borderBottomColor: `var(--${name.toLowerCase()}-color)`,
   };
@@ -24,19 +16,19 @@ const MobileBtns = ({ activeTab, name }) => {
       </button>
       <button
         className={`page__buttons-mob--item ${
-          tab === "Structure" ? "active" : ""
+          tab === "structure" ? "active" : ""
         }`}
-        style={tab === "Structure" ? activeStyle : {}}
-        onClick={() => changeActiveTab("Structure")}
+        style={tab === "structure" ? activeStyle : {}}
+        onClick={() => changeActiveTab("structure")}
       >
         Structure
       </button>
       <button
         className={`page__buttons-mob--item ${
-          tab === "Surface" ? "active" : ""
+          tab === "surface" ? "active" : ""
         }`}
-        style={tab === "Surface" ? activeStyle : {}}
-        onClick={() => changeActiveTab("Surface")}
+        style={tab === "surface" ? activeStyle : {}}
+        onClick={() => changeActiveTab("surface")}
       >
         Surface
       </button>
