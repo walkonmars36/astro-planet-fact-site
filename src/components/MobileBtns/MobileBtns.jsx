@@ -1,3 +1,5 @@
+import "./MobileBtns.scss";
+
 const MobileBtns = ({ name, tab, changeActiveTab }) => {
   const activeStyle = {
     borderBottomColor: `var(--${name.toLowerCase()}-color)`,

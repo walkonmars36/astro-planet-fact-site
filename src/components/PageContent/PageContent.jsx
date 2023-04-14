@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
-import MobileBtns from "./MobileBtns";
+import "./PageContent.scss";
+import MobileBtns from "../MobileBtns/MobileBtns";
 
 const PlanetPage = ({ name, images, overview, structure, geology }) => {
   const [tab, setTab] = useState("overview");
@@ -21,7 +22,7 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
   }
 
   return (
-    <main>
+    <>
       <MobileBtns name={name} tab={tab} changeActiveTab={changeActiveTab} />
       <div class="planet__img-container">
         <img
@@ -45,7 +46,7 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
           Source : <a href={currentContent().source}>Wikipedia</a>
         </small>
       </article>
-    </main>
+    </>
   );
 };
 

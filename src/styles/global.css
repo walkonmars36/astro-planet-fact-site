@@ -15,7 +15,7 @@
 
   /* COLOURS */
 
-  --underline: hsl(0, 0%, 59%);
+  --under-outline: hsla(0, 0%, 59%, 0.4);
   --hover-grey: hsl(240, 17%, 26%);
   --white: hsl(0, 0%, 100%);
   --dk-blue-bg: hsl(240, 67%, 8%);
@@ -45,7 +45,7 @@ body {
   min-height: 100vh;
   color: var(--white);
   font-family: "League Spartan", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 h1,
@@ -58,10 +58,14 @@ h4 {
   font-family: "League Spartan", sans-serif;
 }
 
+/* footer headings */
+
 h3 {
   font-size: 0.7rem;
   text-transform: uppercase;
 }
+
+/* planet heading */
 
 h1 {
   font-size: clamp(2.667rem, 1.728rem + 3.756vw, 5.333rem);
@@ -69,8 +73,9 @@ h1 {
 }
 
 p {
-  font-size: 0.9rem;
+  font-size: clamp(1rem, 0.956rem + 0.188vw, 1.125rem);
   line-height: 1.5;
+  opacity: 0.8;
 }
 
 a {
@@ -99,7 +104,7 @@ button {
   font-family: inherit;
   padding: 0;
   cursor: pointer;
-  color: white;
+  color: inherit;
   text-transform: uppercase;
 
   @media screen and (-ms-high-contrast: active) {
@@ -114,114 +119,4 @@ button {
 .no-scroll {
   overflow: hidden;
   width: 100%;
-}
-
-/* PAGE BUTTONS */
-
-/* MOBILE */
-
-.page__buttons-mob {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 var(--spacing-3);
-  border-bottom: 1px solid var(--underline);
-}
-
-.page__buttons-mob--item {
-  padding: var(--spacing-2) var(--spacing-0);
-  letter-spacing: 0.12rem;
-}
-
-.page__buttons-mob--item.active {
-  border-bottom: 4px solid white;
-}
-
-/* PAGE CONTENT AREA */
-
-/* Page */
-
-.page__text {
-  text-align: center;
-}
-
-.page__content {
-  padding: 0 var(--spacing-3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.page__content p {
-  max-width: 40ch;
-  margin-top: var(--spacing-2);
-}
-
-.wiki-link {
-  margin-top: var(--spacing-4);
-  display: flex;
-  gap: var(--spacing-1);
-}
-
-.wiki-link a {
-  text-transform: initial;
-  text-decoration: underline;
-}
-
-.wiki-link::after {
-  content: url("/assets/icon-source.svg");
-}
-
-/* Planet Images */
-
-.planet__img-container {
-  position: relative;
-  display: flex;
-}
-
-.planet__img--surface {
-  position: absolute;
-  width: 20%;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.planet__img--Mercury {
-  width: 29.6vw;
-  margin: var(--spacing-9) auto;
-}
-
-.planet__img--Venus {
-  width: 41vw;
-  margin: var(--spacing-9) auto;
-}
-
-.planet__img--Earth {
-  width: 46vw;
-  margin: var(--spacing-8) auto;
-}
-
-.planet__img--Mars {
-  width: 34.4vw;
-  margin: var(--spacing-11) auto;
-}
-
-.planet__img--Jupiter {
-  width: 59.75vw;
-  margin: var(--spacing-5) auto;
-}
-
-.planet__img--Saturn {
-  width: 65vw;
-  margin: var(--spacing-4) auto;
-}
-
-.planet__img--Uranus {
-  width: 47vw;
-  margin: var(--spacing-8) auto;
-}
-
-.planet__img--Neptune {
-  width: 46vw;
-  margin: var(--spacing-8) auto;
 }

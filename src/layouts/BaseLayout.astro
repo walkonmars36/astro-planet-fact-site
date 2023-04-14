@@ -6,7 +6,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-import PageContent from "../components/PageContent.jsx";
+import PageContent from "../components/PageContent/PageContent";
 
 import type { DataProps } from "../interface";
 
@@ -27,10 +27,11 @@ const { name } = planetData;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -39,7 +40,9 @@ const { name } = planetData;
   </head>
   <body>
     <Header />
-    <PageContent {...planetData} client:load />
+    <main>
+      <PageContent {...planetData} client:load />
+    </main>
     <Footer {...planetData} />
 
     <script>
