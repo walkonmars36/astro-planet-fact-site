@@ -38,7 +38,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: #070724;
+      background: var(--dk-blue-bg);
       width: 100%;
       inset: 0 0 0 -100%;
       transform: translateX(0);
@@ -63,9 +63,18 @@
       border-bottom: 1px solid var(--underline);
     }
 
+    .nav__link {
+      width: 100%;
+      height: 100%;
+    }
+
     .nav__item:last-child {
       border-bottom: none;
-      padding-bottom: 0;
+    }
+
+    .nav__item:hover,
+    .nav__item:focus {
+      background-color: var(--hover-grey);
     }
 
     .nav__item::before {
