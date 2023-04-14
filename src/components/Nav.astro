@@ -3,96 +3,122 @@
 
 <nav class="nav" role="navigation">
   <ul class="nav__list">
-    <li class="nav__item">
+    <li class="nav__item" data-planet="mercury">
       <a href="/mercury" class="nav__link">Mercury</a>
     </li>
-    <li class="nav__item">
+    <li class="nav__item" data-planet="venus">
       <a href="/venus" class="nav__link">Venus</a>
     </li>
-    <li class="nav__item">
+    <li class="nav__item" data-planet="earth">
       <a href="/" class="nav__link">Earth</a>
     </li>
-    <li class="nav__item">
+    <li class="nav__item" data-planet="mars">
       <a href="/mars" class="nav__link">Mars</a>
     </li>
-    <li class="nav__item">
+    <li class="nav__item" data-planet="jupiter">
       <a href="/jupiter" class="nav__link">Jupiter</a>
     </li>
-    <li class="nav__item">
+    <li class="nav__item" data-planet="saturn">
       <a href="/saturn" class="nav__link">Saturn</a>
     </li>
-    <li class="nav__item">
+    <li class="nav__item" data-planet="uranus">
       <a href="/uranus" class="nav__link">Uranus</a>
     </li>
-    <li class="nav__item">
+    <li class="nav__item" data-planet="neptune">
       <a href="/neptune" class="nav__link">Neptune</a>
     </li>
   </ul>
 </nav>
 
 <style>
-  .nav {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #070724;
-    width: 100%;
-    inset: 0 0 0 -100%;
-    transform: translateX(0);
-    transition: transform 250ms;
-    z-index: -1;
-    padding: var(--spacing-5) 0;
-  }
-  .nav__open {
-    transform: translateX(100%);
-  }
-
-  .nav__list {
-    padding: var(--spacing-5) var(--spacing-3) 0;
-  }
-
-  .nav__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.7rem 0;
-    width: 100%;
-    border-bottom: 1px solid white;
-  }
-
-  .nav__item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .nav__item::before {
-    content: "";
-    display: block;
-    width: 1.25rem;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background-color: white;
-    margin-right: var(--spacing-2);
-  }
-
-  .nav__item::after {
-    content: url("/assets/icon-chevron.svg");
-    display: block;
-    width: 1.5rem;
-    aspect-ratio: 1/1;
-    margin-top: 0.5rem;
-    margin-left: auto;
-  }
-
-  @media (min-width: 768px) {
+  /* MOBILE NAV */
+  @media (max-width: 768px) {
     .nav {
-      position: initial;
-      background: inherit;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #070724;
+      width: 100%;
+      inset: 0 0 0 -100%;
+      transform: translateX(0);
+      transition: transform 250ms;
+      z-index: -1;
+      padding: var(--spacing-5) 0;
+    }
+    .nav__open {
+      transform: translateX(100%);
     }
 
     .nav__list {
-      flex-direction: row;
+      padding: var(--spacing-5) var(--spacing-3) 0;
+    }
+
+    .nav__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 0;
+      width: 100%;
+      border-bottom: 1px solid white;
+    }
+
+    .nav__item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .nav__item::before {
+      content: "";
+      display: block;
+      width: 1.25rem;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background-color: var(--planet-color);
+      margin-right: var(--spacing-2);
+    }
+
+    /* PLANET COLOURS FOR ::BEFORE ICON */
+    .nav__item[data-planet="mercury"]::before {
+      background-color: var(--mercury-color);
+    }
+    .nav__item[data-planet="venus"]::before {
+      background-color: var(--venus-color);
+    }
+    .nav__item[data-planet="earth"]::before {
+      background-color: var(--earth-color);
+    }
+    .nav__item[data-planet="mars"]::before {
+      background-color: var(--mars-color);
+    }
+    .nav__item[data-planet="jupiter"]::before {
+      background-color: var(--jupiter-color);
+    }
+    .nav__item[data-planet="saturn"]::before {
+      background-color: var(--saturn-color);
+    }
+    .nav__item[data-planet="uranus"]::before {
+      background-color: var(--uranus-color);
+    }
+    .nav__item[data-planet="neptune"]::before {
+      background-color: var(--neptune-color);
+    }
+
+    .nav__item::after {
+      content: url("/assets/icon-chevron.svg");
+      display: block;
+      width: 1.5rem;
+      aspect-ratio: 1/1;
+      margin-top: 0.5rem;
+      margin-left: auto;
+    }
+  }
+
+  /* LARGE NAV */
+
+  @media (min-width: 769px) {
+    .nav__list {
+      display: flex;
     }
   }
 </style>
