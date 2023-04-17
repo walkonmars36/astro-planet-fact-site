@@ -14,6 +14,14 @@ import FooterCard from "./FooterCard.astro";
 <style>
   footer {
     display: flex;
+    flex-direction: column;
     padding: var(--spacing-3);
+  }
+
+  @media (min-width: 37.5rem) {
+    footer {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 </style>

@@ -29,4 +29,12 @@ const { label, value } = Astro.props;
     font-weight: 400;
     font-size: 1.25em;
   }
+
+  @media (min-width: 37.5rem) {
+    .footer__card-items {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: var(--spacing-2) var(--spacing-2);
+    }
+  }
 </style>

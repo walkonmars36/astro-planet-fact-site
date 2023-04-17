@@ -48,41 +48,138 @@
 
   &--Mercury {
     width: 29.6vw;
+
     margin: var(--spacing-9) auto;
+  }
+  @media (min-width: 768px) {
+    &--Mercury {
+      width: 24vw;
+      margin: var(--spacing-9) auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--Mercury {
+      max-width: 18rem;
+      margin: var(--spacing-9) auto;
+    }
   }
 
   &--Venus {
     width: 41vw;
     margin: var(--spacing-9) auto;
   }
+  @media (min-width: 768px) {
+    &--Venus {
+      width: 33vw;
+      margin: var(--spacing-9) auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--Venus {
+      max-width: 25rem;
+      margin: var(--spacing-9) auto;
+    }
+  }
 
   &--Earth {
     width: 46vw;
     margin: var(--spacing-8) auto;
+  }
+  @media (min-width: 768px) {
+    &--Earth {
+      width: 37vw;
+      margin: var(--spacing-8) auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--Earth {
+      max-width: 28rem;
+      margin: var(--spacing-8) auto;
+    }
   }
 
   &--Mars {
     width: 34.4vw;
     margin: var(--spacing-11) auto;
   }
+  @media (min-width: 768px) {
+    &--Mars {
+      width: 28vw;
+      margin: var(--spacing-11) auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--Mars {
+      max-width: 21rem;
+      margin: var(--spacing-11) auto;
+    }
+  }
 
   &--Jupiter {
     width: 59.75vw;
     margin: var(--spacing-5) auto;
+  }
+  @media (min-width: 768px) {
+    &--Jupiter {
+      width: 48vw;
+      margin: var(--spacing-5) auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--Jupiter {
+      max-width: 36rem;
+      margin: var(--spacing-5) auto;
+    }
   }
 
   &--Saturn {
     width: 65vw;
     margin: var(--spacing-4) auto;
   }
+  @media (min-width: 768px) {
+    &--Saturn {
+      width: 52vw;
+      margin: var(--spacing-4) auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--Saturn {
+      max-width: 42rem;
+      margin: var(--spacing-4) auto;
+    }
+  }
 
   &--Uranus {
     width: 47vw;
     margin: var(--spacing-8) auto;
   }
+  @media (min-width: 768px) {
+    &--Uranus {
+      width: 38vw;
+      margin: var(--spacing-8) auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--Uranus {
+      max-width: 29rem;
+      margin: var(--spacing-8) auto;
+    }
+  }
 
   &--Neptune {
     width: 46vw;
     margin: var(--spacing-8) auto;
+  }
+  @media (min-width: 768px) {
+    &--Neptune {
+      width: 37vw;
+      margin: var(--spacing-8) auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &--Neptune {
+      max-width: 28rem;
+      margin: var(--spacing-8) auto;
+    }
   }
 }

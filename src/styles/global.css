@@ -93,11 +93,6 @@ img {
   display: block;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-}
-
 button {
   border: none;
   background-color: transparent;
