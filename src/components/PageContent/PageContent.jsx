@@ -1,6 +1,7 @@
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import "./PageContent.scss";
 import MobileBtns from "../MobileBtns/MobileBtns";
+import LargeBtns from "../LargeBtns/LargeBtns";
 
 const PlanetPage = ({ name, images, overview, structure, geology }) => {
   const [tab, setTab] = useState("overview");
@@ -45,6 +46,7 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
         <small class="wiki-link">
           Source : <a href={currentContent().source}>Wikipedia</a>
         </small>
+        <LargeBtns name={name} tab={tab} changeActiveTab={changeActiveTab} />
       </article>
     </>
   );

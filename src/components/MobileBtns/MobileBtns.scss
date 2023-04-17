@@ -24,3 +24,9 @@
   opacity: 1;
   border-bottom: 4px solid var(--white);
 }
+
+@media (min-width: 768px) {
+  .page__buttons-mob {
+    display: none;
+  }
+}
