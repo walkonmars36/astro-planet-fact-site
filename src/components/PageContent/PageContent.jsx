@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import "./PageContent.scss";
 import MobileBtns from "../MobileBtns/MobileBtns";
 
@@ -24,7 +24,7 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
   return (
     <>
       <MobileBtns name={name} tab={tab} changeActiveTab={changeActiveTab} />
-      <div class="planet__img-container">
+      <div class={`planet__img-container `}>
         <img
           class={`planet__img planet__img--${name}`}
           src={currentImage()}
@@ -39,7 +39,7 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
         )}
       </div>
 
-      <article class="page__content">
+      <article class={`page__content `}>
         <h1 class="page__title">{name}</h1>
         <p class="page__text">{currentContent().content}</p>
         <small class="wiki-link">

@@ -4,7 +4,7 @@ import Hamburger from "../components/Hamburger.astro";
 ---
 
 <header>
-  <a class="home" href="/">The Planets</a>
+  <a class="planets-home" href="/">The Planets</a>
   <Nav />
   <Hamburger />
 </header>
@@ -16,8 +16,8 @@ import Hamburger from "../components/Hamburger.astro";
     justify-content: space-between;
     position: relative;
     z-index: 2;
-    height: 4rem;
-    padding: 0 var(--spacing-3);
+    /* height: 4rem; */
+    padding: var(--spacing-2) var(--spacing-3);
   }
 
   header::after {
@@ -31,8 +31,14 @@ import Hamburger from "../components/Hamburger.astro";
     z-index: 3;
   }
 
-  .home {
+  .planets-home {
     font-family: "Antonio", sans-serif;
     font-size: 1.75rem;
+  }
+
+  @media (min-width: 37.5rem) {
+    header {
+      flex-direction: column;
+    }
   }
 </style>
