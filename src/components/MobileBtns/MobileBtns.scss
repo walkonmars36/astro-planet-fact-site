@@ -11,6 +11,12 @@
   letter-spacing: 0.12rem;
   opacity: 0.5;
   border-bottom: 4px solid transparent;
+  font-size: 0.8rem;
+}
+
+.page__buttons-mob--item:hover,
+.page__buttons-mob--item:focus {
+  opacity: 1;
 }
 
 .page__buttons-mob--item.active {

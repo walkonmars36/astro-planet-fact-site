@@ -140,7 +140,76 @@
     }
 
     .nav__item {
-      padding-left: var(--spacing-0);
+      padding-bottom: 1em;
+    }
+
+    /* PLANET COLOURS FOR ACTIVE BORDER BOTTOM */
+    .nav__item[data-planet="mercury"].active .nav__link {
+      border-bottom: 4px solid var(--mercury-color);
+    }
+    .nav__item[data-planet="venus"].active .nav__link {
+      border-bottom: 4px solid var(--venus-color);
+    }
+    .nav__item[data-planet="earth"].active .nav__link {
+      border-bottom: 4px solid var(--earth-color);
+    }
+    .nav__item[data-planet="mars"].active .nav__link {
+      border-bottom: 4px solid var(--mars-color);
+    }
+    .nav__item[data-planet="jupiter"].active .nav__link {
+      border-bottom: 4px solid var(--jupiter-color);
+    }
+    .nav__item[data-planet="saturn"].active .nav__link {
+      border-bottom: 4px solid var(--saturn-color);
+    }
+    .nav__item[data-planet="uranus"].active .nav__link {
+      border-bottom: 4px solid var(--uranus-color);
+    }
+    .nav__item[data-planet="neptune"].active .nav__link {
+      border-bottom: 4px solid var(--neptune-color);
     }
   }
 </style>
+
+<script>
+  function setActivePlanet(planet) {
+    const navItem = document.querySelector(
+      `.nav__item[data-planet="${planet}"]`
+    );
+
+    // Remove the active class from all nav items
+    document.querySelectorAll(".nav__item").forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    // Add the active class to the clicked nav item
+    navItem.classList.add("active");
+  }
+
+  // When the page loads, check for the stored active planet and set the active class accordingly
+  document.addEventListener("DOMContentLoaded", () => {
+    const storedPlanet = localStorage.getItem("activePlanet");
+    const isBaseURL = window.location.pathname === "/";
+
+    if (storedPlanet && !isBaseURL) {
+      setActivePlanet(storedPlanet);
+    } else {
+      setActivePlanet("earth");
+      localStorage.setItem("activePlanet", "earth");
+    }
+  });
+
+  const navLink = document.querySelectorAll(".nav__link");
+  navLink.forEach((link) => {
+    link.addEventListener("click", function () {
+      const navItem = this.closest(".nav__item");
+      const planet = navItem.dataset.planet;
+
+      // Store the clicked planet in localStorage
+      localStorage.setItem("activePlanet", planet);
+
+      // Set the active class for the clicked nav item
+      setActivePlanet(planet);
+    });
+  });
+</script>
