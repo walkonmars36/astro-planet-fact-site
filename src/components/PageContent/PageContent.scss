@@ -1,18 +1,64 @@
-.page__ {
-  &content {
+.page {
+  &__content {
     padding: 0 var(--spacing-3);
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &text {
+  &__text {
     text-align: center;
   }
 
-  &content p {
+  &__content p {
     max-width: 40ch;
     margin-top: var(--spacing-2);
+  }
+  @media (min-width: 48rem) {
+    &__larger-screens {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 var(--spacing-3);
+      gap: var(--spacing-8);
+    }
+    &__content {
+      align-items: flex-start;
+      padding: 0;
+      width: 60%;
+    }
+    &__text {
+      text-align: left;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    &__larger-screens {
+      padding-inline: var(--spacing-12);
+    }
+  }
+}
+
+@media (min-width: 75rem) {
+  .page {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10rem;
+    margin-top: 10rem;
+
+    &__larger-screens {
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 0;
+      width: 30%;
+    }
+
+    &__content {
+      align-items: flex-start;
+      padding: 0;
+      width: 100%;
+    }
   }
 }
 
@@ -38,6 +84,18 @@
     display: flex;
   }
 
+  @media (min-width: 48rem) {
+    &-container {
+      display: block;
+    }
+  }
+
+  @media (min-width: 75rem) {
+    &-container {
+      width: 50%;
+    }
+  }
+
   &--surface {
     position: absolute;
     width: 20%;
@@ -48,19 +106,16 @@
 
   &--Mercury {
     width: 29.6vw;
-
     margin: var(--spacing-9) auto;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     &--Mercury {
       width: 24vw;
-      margin: var(--spacing-9) auto;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 75rem) {
     &--Mercury {
       max-width: 18rem;
-      margin: var(--spacing-9) auto;
     }
   }
 
@@ -68,16 +123,14 @@
     width: 41vw;
     margin: var(--spacing-9) auto;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     &--Venus {
       width: 33vw;
-      margin: var(--spacing-9) auto;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 75rem) {
     &--Venus {
       max-width: 25rem;
-      margin: var(--spacing-9) auto;
     }
   }
 
@@ -85,16 +138,14 @@
     width: 46vw;
     margin: var(--spacing-8) auto;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     &--Earth {
       width: 37vw;
-      margin: var(--spacing-8) auto;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 75rem) {
     &--Earth {
       max-width: 28rem;
-      margin: var(--spacing-8) auto;
     }
   }
 
@@ -102,16 +153,14 @@
     width: 34.4vw;
     margin: var(--spacing-11) auto;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     &--Mars {
       width: 28vw;
-      margin: var(--spacing-11) auto;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 75rem) {
     &--Mars {
       max-width: 21rem;
-      margin: var(--spacing-11) auto;
     }
   }
 
@@ -119,16 +168,14 @@
     width: 59.75vw;
     margin: var(--spacing-5) auto;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     &--Jupiter {
       width: 48vw;
-      margin: var(--spacing-5) auto;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 75rem) {
     &--Jupiter {
       max-width: 36rem;
-      margin: var(--spacing-5) auto;
     }
   }
 
@@ -136,16 +183,14 @@
     width: 65vw;
     margin: var(--spacing-4) auto;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     &--Saturn {
       width: 52vw;
-      margin: var(--spacing-4) auto;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 75rem) {
     &--Saturn {
-      max-width: 42rem;
-      margin: var(--spacing-4) auto;
+      max-width: 40rem;
     }
   }
 
@@ -153,16 +198,14 @@
     width: 47vw;
     margin: var(--spacing-8) auto;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     &--Uranus {
       width: 38vw;
-      margin: var(--spacing-8) auto;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 75rem) {
     &--Uranus {
       max-width: 29rem;
-      margin: var(--spacing-8) auto;
     }
   }
 
@@ -170,16 +213,14 @@
     width: 46vw;
     margin: var(--spacing-8) auto;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     &--Neptune {
       width: 37vw;
-      margin: var(--spacing-8) auto;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 75rem) {
     &--Neptune {
       max-width: 28rem;
-      margin: var(--spacing-8) auto;
     }
   }
 }

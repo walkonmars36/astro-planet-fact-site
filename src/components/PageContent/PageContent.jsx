@@ -23,9 +23,9 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
   }
 
   return (
-    <>
+    <div class="page">
       <MobileBtns name={name} tab={tab} changeActiveTab={changeActiveTab} />
-      <div class={`planet__img-container `}>
+      <div class="planet__img-container">
         <img
           class={`planet__img planet__img--${name}`}
           src={currentImage()}
@@ -40,15 +40,17 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
         )}
       </div>
 
-      <article class={`page__content `}>
-        <h1 class="page__title">{name}</h1>
-        <p class="page__text">{currentContent().content}</p>
-        <small class="wiki-link">
-          Source : <a href={currentContent().source}>Wikipedia</a>
-        </small>
+      <div className="page__larger-screens">
+        <article class="page__content">
+          <h1 class="page__title">{name}</h1>
+          <p class="page__text">{currentContent().content}</p>
+          <small class="wiki-link">
+            Source : <a href={currentContent().source}>Wikipedia</a>
+          </small>
+        </article>
         <LargeBtns name={name} tab={tab} changeActiveTab={changeActiveTab} />
-      </article>
-    </>
+      </div>
+    </div>
   );
 };
 

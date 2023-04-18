@@ -41,4 +41,23 @@ import Hamburger from "../components/Hamburger.astro";
       padding-bottom: 0;
     }
   }
+
+  @media (min-width: 48rem) {
+    .planets-home {
+      padding: var(--spacing-3);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: var(--spacing-2);
+    }
+
+    .planets-home {
+      padding: 0;
+    }
+  }
 </style>
