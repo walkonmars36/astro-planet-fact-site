@@ -15,7 +15,7 @@ import FooterCard from "./FooterCard.astro";
   footer {
     display: flex;
     flex-direction: column;
-    padding: var(--spacing-3);
+    margin: var(--spacing-3);
   }
 
   @media (min-width: 37.5rem) {
@@ -25,14 +25,21 @@ import FooterCard from "./FooterCard.astro";
     }
   }
 
+  @media (min-width: 48rem) {
+    footer {
+      margin-inline: var(--spacing-5);
+    }
+  }
+
   @media (min-width: 64rem) {
     footer {
-      padding-inline: var(--spacing-12);
+      margin-top: var(--spacing-11);
     }
   }
   @media (min-width: 75rem) {
     footer {
-      padding-inline: 10rem;
+      margin-inline: 10rem;
+      margin-top: var(--spacing-11);
     }
   }
 </style>

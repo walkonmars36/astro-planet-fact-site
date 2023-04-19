@@ -3,7 +3,7 @@ import "./PageContent.scss";
 import MobileBtns from "../MobileBtns/MobileBtns";
 import LargeBtns from "../LargeBtns/LargeBtns";
 
-const PlanetPage = ({ name, images, overview, structure, geology }) => {
+const PageContent = ({ name, images, overview, structure, geology }) => {
   const [tab, setTab] = useState("overview");
 
   function changeActiveTab(currentTab) {
@@ -54,4 +54,4 @@ const PlanetPage = ({ name, images, overview, structure, geology }) => {
   );
 };
 
-export default PlanetPage;
+export default PageContent;
